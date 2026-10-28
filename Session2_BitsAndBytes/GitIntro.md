@@ -75,6 +75,10 @@ The part after the `-m` flag is your comment that will be stored with this commi
 
 `git status` will show you new files and staged files.  Sometimes, you do not want to add files to a git repository.  Adding those files to `.gitignore` (and checking `.gitignore` into git) will cause git to ignore the listed files.  Wildcards are allowed.
 
+`git log` shows the commits in order
+
+`gitk` or `git-gui` shows a GUI with the history of your repo
+
 ---
 
 # **Checking the history of your repo**
