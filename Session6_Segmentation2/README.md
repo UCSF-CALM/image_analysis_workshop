@@ -32,3 +32,5 @@ Deep learning tools such as Cellpose run much faster on a GPU than a CPU, and GP
 * Ask your AI assistant if GPU acceleration of Cellpose is possible on your computer, and follow its instruction to get AI acceleration (or let it carry out the installation, but please do be aware of what hets installed). This may not be needed on a Mac, but why not confirm?
 
 * Ask your AI assistant to write a script that uses Cellpose to segment the image testimages/3CChannel_FF_Corrected_1/3Channel_FF_Corrected_1_MMStack_Pos0.ome.tif.  Use the DAPI channel to get the nucleic, the FITC channel to segment the cytoplams.  Show the original image the the two masks in napari.
+
+* Note: Cellpose is both a library and an application.  You can run the Cellpose GUI by typing: `uv run cellpose`.  This GUI is especially helpful if you want to finetune existing models to work better on your data.
