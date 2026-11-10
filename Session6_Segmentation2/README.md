@@ -16,7 +16,7 @@ Rewriting this to solve for CI, we get:
 > CI = (MI - BI) / FI
 
 
-When doing this calculation, it is nice to normalize the FI image to 1 (i.e. convert it to a floating point image and divide the image by its mean).  That way the mean intensity of the CI stays the same as that of the MI.  
+When doing this calculation, it is nice to normalize the FI image to 1 (i.e. convert it to a floating point image and divide the image by its mean).  That way the mean intensity of the CI stays the same as that of the MI.  Also, the flatfield image should be background corrected.
 
 * Ask your AI coding assistant to analyze the nuclei in the DAPI channel of the image(s) 3Channel_Rw_25Pos_1, with and without Flatfield correction with the files available in the folder Flatfield (both of these are in our shared Box folder "image_analysis_workshop_2026).  Ask for a histogram of the background corrected summed DAPi intensity.  Is it better to calculate the Otsu threshold per image or one threshold for the complete dataset? Also, you can ask for local background subtraction, for instance by using the mdeian value of a ring 10-20 pixels out of the nuclei (taking care to avoid nearby nuclei and their rings).  Which approach gives you a histogram where you can discern G1 and G2 nuclei most faithfully? 
 
