@@ -22,7 +22,7 @@ When doing this calculation, it is nice to normalize the FI image to 1 (i.e. con
 
 Another approach is to use a "White Top-Hat" filter.  This procedure works by erosion followed by dilation of the original greyscale image to remove objects smaller than the filter size (therefore, you need to carefully consider the needed filter size).  The resulting image represents a good estimate of the background and can be used to subtract from the orginal image. It works best when objects are not that large. 
 
-* Ask your AI assistant to write a Python script that uses a White Top Hat filter to estimate the background in the DAPI channel of testImages/3Channel_FF_Corrected and show the original DAPI image, the background, and the background corrected image in napari. Make sure that the structure size of the top hat is large enough for the nuclei.
+* Ask your AI assistant to write a Python script that uses a White Top Hat filter to estimate the background in the DAPI channel of testImages/3Channel_FF_Corrected and show the original DAPI image, the background, and the background corrected image in napari. Make sure that the structure size of the top hat is large enough for the nuclei. Since this image was already flatfield corrected, what does the backrgound image represent?
 
 
 ## Segmentation using trained networks
@@ -36,6 +36,8 @@ Deep learning tools such as Cellpose run much faster on a GPU than a CPU, and GP
 
 * Ask your AI assistant if GPU acceleration of Cellpose is possible on your computer, and follow its instruction to get AI acceleration (or let it carry out the installation, but please do be aware of what hets installed). This may not be needed on a Mac, but why not confirm?
 
-* Ask your AI assistant to write a script that uses Cellpose to segment the image testimages/3CChannel_FF_Corrected_1/3Channel_FF_Corrected_1_MMStack_Pos0.ome.tif.  Use the DAPI channel to get the nucleic, the FITC channel to segment the cytoplams.  Show the original image the the two masks in napari.
+* Ask your AI assistant to write a script that uses Cellpose to segment the image testimages/3CChannel_FF_Corrected_1/3Channel_FF_Corrected_1_MMStack_Pos0.ome.tif.  Use the DAPI channel to get the nucleic, the FITC channel to segment the cytoplams.  Show the original image and the two masks in napari.
 
-* Note: Cellpose is both a library and an application.  You can run the Cellpose GUI by typing: `uv run cellpose`.  This GUI is especially helpful if you want to finetune existing models to work better on your data.
+* Get the image data 3Channel_Raw_25Pos_1 from the Box folder.  Also get the Flatfield directory.  Ask your AI coding assistant to write a script that does flatfield correction for all images in the 3Channel_Raw_25Pos_1 data set (note, these were taken with the 20x objective lens, first channel is Cy3, second is FITC, 3d is DAPI).  then use Cellpose to find nuclear masks for all cells, measures background corrected summed intensities and size for all nuclei in the flatfield corrected images, saves this in a cvs file, and show a histogram of summed intensities of background corrected nuclei. Ask to compare this data with that obtained without flatfielf correction.
+
+* Note: Cellpose is both a library and an application.  You can run the Cellpose GUI by typing: `uv run cellpose`.  This GUI is especially helpful if you want to finetune existing models to work better on your data. 
